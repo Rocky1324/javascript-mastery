@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Integer++</title>
+    </head>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffa6aa;
+        }
+    </style>
+
+    <body>
+        <header>
+            <div>
+                <h1> Number </h1>
+            </div>
+        </header>
+        <main id="main">
+            <div>
+                <input id="obj" autocomplete="off" placeholder="Nbre a atteindre" type="number" autofocus>
+                <input id="submit" type="submit">
+
+                <p id="message"></p>
+            </div>
+        </main>
+    </body>
+
+    <script>
+        let n = 0;
+        let o = Math.floor(Math.random() * 100) + 1;
+        let i = null;
+
+        document.getElementById("submit").onclick = function() {
+            i = Number(document.getElementById("obj").value);
+            if (i < o) {
+                document.getElementById("message").innerHTML = "Ton nombre est trop petit";
+                n++;
+            } else if (i > o) {
+                document.getElementById("message").innerHTML = "Ton nombre est trop grand";
+                n++
+            } else {
+                document.getElementById("message").innerHTML = "Bravo tu as reussis en " + n + "essaies";
+                const btn = document.createElement("button");
+                btn.textContent = "Rejouer";
+                btn.id = "btn";
+                document.getElementById("main").appendChild(btn);
+                btn.addEventListener("click", function() {
+                    o = Math.floor(Math.random() * 100) + 1;
+                    n = 0;
+                    document.getElementById("message").innerHTML = "";
+                    document.getElementById("obj").value = "";
+                    btn.remove();
+                });
+
+            }
+
+        };
+    </script>
+
+</html>
