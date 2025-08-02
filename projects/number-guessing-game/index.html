@@ -1,61 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Integer++</title>
-    </head>
+<head>
+    <title>Integer++</title>
     <style>
         body {
             text-align: center;
             background-color: #ffa6aa;
         }
     </style>
+</head>
 
-    <body>
-        <header>
-            <div>
-                <h1> Number </h1>
-            </div>
-        </header>
-        <main id="main">
-            <div>
-                <input id="obj" autocomplete="off" placeholder="Nbre a atteindre" type="number" autofocus>
-                <input id="submit" type="submit">
+<body>
+    <header>
+        <div>
+            <h1> Guess the Number </h1>
+        </div>
+    </header>
 
-                <p id="message"></p>
-            </div>
-        </main>
-    </body>
+    <main id="main">
+        <div>
+            <input id="obj" autocomplete="off" placeholder="Target number" type="number" autofocus>
+            <input id="submit" type="submit" value="Try">
+            <p id="message"></p>
+        </div>
+    </main>
+</body>
 
-    <script>
-        let n = 0;
-        let o = Math.floor(Math.random() * 100) + 1;
-        let i = null;
+<script>
+    let attempts = 0;
+    let target = Math.floor(Math.random() * 100) + 1;
+    let userGuess = null;
 
-        document.getElementById("submit").onclick = function() {
-            i = Number(document.getElementById("obj").value);
-            if (i < o) {
-                document.getElementById("message").innerHTML = "Ton nombre est trop petit";
-                n++;
-            } else if (i > o) {
-                document.getElementById("message").innerHTML = "Ton nombre est trop grand";
-                n++
-            } else {
-                document.getElementById("message").innerHTML = "Bravo tu as reussis en " + n + "essaies";
-                const btn = document.createElement("button");
-                btn.textContent = "Rejouer";
-                btn.id = "btn";
-                document.getElementById("main").appendChild(btn);
-                btn.addEventListener("click", function() {
-                    o = Math.floor(Math.random() * 100) + 1;
-                    n = 0;
-                    document.getElementById("message").innerHTML = "";
-                    document.getElementById("obj").value = "";
-                    btn.remove();
-                });
+    document.getElementById("submit").onclick = function() {
+        userGuess = Number(document.getElementById("obj").value);
+        if (userGuess < target) {
+            document.getElementById("message").innerHTML = "Your guess is too low";
+            attempts++;
+        } else if (userGuess > target) {
+            document.getElementById("message").innerHTML = "Your guess is too high";
+            attempts++;
+        } else {
+            document.getElementById("message").innerHTML = "Congratulations! You guessed it in " + attempts + " attempts.";
+            const replayBtn = document.createElement("button");
+            replayBtn.textContent = "Play Again";
+            replayBtn.id = "btn";
+            document.getElementById("main").appendChild(replayBtn);
 
-            }
-
-        };
-    </script>
+            replayBtn.addEventListener("click", function() {
+                target = Math.floor(Math.random() * 100) + 1;
+                attempts = 0;
+                document.getElementById("message").innerHTML = "";
+                document.getElementById("obj").value = "";
+                replayBtn.remove();
+            });
+        }
+    };
+</script>
 
 </html>
