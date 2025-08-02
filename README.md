@@ -96,7 +96,3 @@ document.getElementById("main").appendChild(btn);
 **Learning Philosophy:** Build projects, break things, fix them, repeat.  
 Every error is a learning opportunity!
 
-
-// Random Number Generation
-let randomNum = Math.floor(Math.random() * 100) + 1;
-
