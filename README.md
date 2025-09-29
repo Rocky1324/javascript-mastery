@@ -36,11 +36,11 @@ Goal: Transform from *"didn't really masterize JS"* to building **professional i
 **Tech Stack:** HTML, CSS, JavaScript  
 
 **Key Features:**
-- 🎲 Random number generation (1–100)
-- 📊 User feedback (*too high* / *too low*)
-- ⏳ Attempt counter
-- 🔄 Replay functionality with reset
-- 📱 Responsive UI
+-  Random number generation (1–100)
+-  User feedback (*too high* / *too low*)
+-  Attempt counter
+-  Replay functionality with reset
+-  Responsive UI
 
 **What I learned:**
 - Event listener implementation
@@ -52,21 +52,28 @@ Goal: Transform from *"didn't really masterize JS"* to building **professional i
 
 ---
 
-### 🧮 **2. Calculator App** *(Coming Soon)*
+### **2. Calculator App** *(Coming Soon)*
 **Goal:** Build a functional calculator with all basic operations  
 **Focus:** Advanced event handling, mathematical operations
 
 ---
 
-### 📝 **3. To-Do List App**
-**Goal:** Task management with local storage  
-**Focus:** CRUD operations, data persistence
+### **3. To-Do List App**
+**What it does:** List your tasks, and delete it whenever you're done with it  
+**Tech Stack:** HTML, CSS, JavaScript
+**Key Features:**
+- Put your tasks in the input
+- Delete a task when you're done with it
+
+ **What I learned:**
+ - append in js
+ - add an element (button, text...) in the html by the js
 
 📁 **[View Code](./projects/getionary-task/)**
 
 ---
 
-## 📚 Study Notes & Resources
+## Study Notes & Resources
 
 ### Key Concepts Mastered
 ```javascript
@@ -93,7 +100,3 @@ document.getElementById("main").appendChild(btn);
 ## 🔥 Motivation & Reflection
 > **"Today I started to understand JavaScript very well!"**  
 > This breakthrough moment shows the power of consistent practice and hands-on projects.
-
-**Learning Philosophy:** Build projects, break things, fix them, repeat.  
-Every error is a learning opportunity!
-
