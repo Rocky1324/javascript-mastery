@@ -63,6 +63,7 @@ Goal: Transform from *"didn't really masterize JS"* to building **professional i
 **Focus:** CRUD operations, data persistence
 
 📁 **[View Code](./projects/getionary-task/)**
+
 ---
 
 ## 📚 Study Notes & Resources
